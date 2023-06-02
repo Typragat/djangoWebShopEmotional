@@ -1,0 +1,21 @@
+{% extends 'shop_auth/base.html' %}
+
+{% block title %}
+About User
+{% endblock %}
+{% block body %}
+<h1>User info</h1>
+{% if user.is_authenticated %}
+<h2>Detail</h2>
+<p>Username {{user.username}}</p>
+<p>First name {{user.first_name}}</p>
+<p>Second name {{user.second_name}}</p>
+<p>Email {{user.email}}</p>
+{% else %}
+<h2>User is anon</h2>
+{% endif %}
+<a href="http://127.0.0.1:8000/"> На главную </a>
+<p><a href="{% url 'myauth:logout' %}"> Выйти из профиля </a></p>
+
+
+{% endblock %}
